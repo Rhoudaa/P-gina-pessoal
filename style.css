@@ -15,6 +15,8 @@
     --primary-hover-gradient: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%); /* Gradiente ao passar o mouse */
     --glow-color: rgba(139, 92, 246, 0.4); /* Cor de sombra brilhante para elementos ativos */
     
+    --name-gradient: linear-gradient(to right, #ffffff, #e2e8f0); /* Gradiente do nome no tema escuro */
+    
     --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave para transição de estados (hover) */
@@ -35,6 +37,8 @@ body.light-theme {
     --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); /* Gradiente mais vivo no tema claro */
     --primary-hover-gradient: linear-gradient(135deg, #3730a3 0%, #6d28d9 100%);
     --glow-color: rgba(99, 102, 241, 0.25);
+    
+    --name-gradient: linear-gradient(to right, #0f172a, #4f46e5); /* Gradiente elegante escuro para o nome no tema claro */
 }
 
 /* [CSS: RESET GLOBAL]
@@ -215,7 +219,7 @@ body {
     font-weight: 800;
     letter-spacing: -0.5px;
     margin-bottom: 6px;
-    background: linear-gradient(to right, #ffffff, #e2e8f0);
+    background: var(--name-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
