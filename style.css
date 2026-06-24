@@ -1,30 +1,35 @@
-/* Design Tokens & Theme Variables */
+/* [CSS: VARIÁVEIS DE TEMA (Tokens de Design)] 
+   Aqui definimos as cores, fontes e transições que serão reutilizadas em todo o site.
+   Qualquer alteração nessas cores muda o visual da página inteira instantaneamente. */
 :root {
-    --bg-primary: #0a0e17;
-    --card-bg: rgba(20, 28, 48, 0.45);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-glow: rgba(99, 102, 241, 0.15);
+    --bg-primary: #0a0e17; /* Cor de fundo principal escura */
+    --card-bg: rgba(20, 28, 48, 0.45); /* Cor de fundo translúcida do card (Glassmorphism) */
+    --card-border: rgba(255, 255, 255, 0.08); /* Borda fina para dar efeito de vidro refletivo */
+    --card-glow: rgba(99, 102, 241, 0.15); /* Efeito de brilho roxo/azul sob o card */
     
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #f8fafc; /* Cor do texto principal (quase branco) */
+    --text-secondary: #94a3b8; /* Cor do texto secundário (cinza claro) */
+    --text-muted: #64748b; /* Cor de textos menos importantes */
     
-    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-    --primary-hover-gradient: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
-    --glow-color: rgba(139, 92, 246, 0.4);
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); /* Gradiente roxo-azul padrão */
+    --primary-hover-gradient: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%); /* Gradiente ao passar o mouse */
+    --glow-color: rgba(139, 92, 246, 0.4); /* Cor de sombra brilhante para elementos ativos */
     
     --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave para transição de estados (hover) */
 }
 
-/* Global Reset */
+/* [CSS: RESET GLOBAL]
+   Remove margens e paddings padrões que os navegadores colocam sozinhos. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* [CSS: ESTILO DO CORPO DA PÁGINA]
+   Define a fonte, o fundo e centraliza o conteúdo na tela. */
 body {
     font-family: var(--font-family);
     background-color: var(--bg-primary);
@@ -37,7 +42,8 @@ body {
     position: relative;
 }
 
-/* Animated Gradient & Glow Backgrounds */
+/* [CSS: ELEMENTOS DE DECORAÇÃO DO FUNDO (BG)]
+   Efeitos de luzes brilhantes e gradientes de fundo. */
 .bg-gradient-decoration {
     position: fixed;
     top: 0;
@@ -63,6 +69,7 @@ body {
     animation: pulseGlow 12s infinite alternate ease-in-out;
 }
 
+/* [CSS: ANIMAÇÃO DE PULSAÇÃO DA BOLA DE GLOW] */
 @keyframes pulseGlow {
     0% {
         transform: translate(-50%, -50%) scale(1);
@@ -74,7 +81,8 @@ body {
     }
 }
 
-/* Container */
+/* [CSS: CARD CONTAINER]
+   Centralizador do card principal da página */
 .main-container {
     width: 100%;
     max-width: 480px;
@@ -82,7 +90,8 @@ body {
     z-index: 1;
 }
 
-/* Glassmorphic Profile Card */
+/* [CSS: CARTÃO DE PERFIL (Glassmorphism)]
+   Aparência de vidro fosco, com transparência e bordas suaves. */
 .profile-card {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
@@ -97,6 +106,8 @@ body {
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* [CSS: INTERAÇÃO HOVER DO CARD]
+   Faz o card subir um pouco e brilhar mais quando passa o mouse por cima */
 .profile-card:hover {
     transform: translateY(-6px);
     border-color: rgba(255, 255, 255, 0.15);
@@ -104,6 +115,7 @@ body {
                 0 0 60px rgba(99, 102, 241, 0.25);
 }
 
+/* [CSS: ANIMAÇÃO DE SURGIMENTO DO CARD] */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -115,7 +127,7 @@ body {
     }
 }
 
-/* Profile Header & Avatar */
+/* [CSS: ESTILO DO CABEÇALHO DO PERFIL] */
 .profile-header {
     display: flex;
     flex-direction: column;
@@ -123,6 +135,8 @@ body {
     margin-bottom: 24px;
 }
 
+/* [CSS: FOTO DE PERFIL / AVATAR WRAPPER]
+   Desenha a borda gradiente colorida ao redor da foto. */
 .avatar-container {
     position: relative;
     width: 130px;
@@ -149,7 +163,8 @@ body {
     background-color: var(--bg-primary);
 }
 
-/* Active Status Indicator */
+/* [CSS: INDICADOR VERDE ONLINE]
+   Ponto indicador que pisca em verde para indicar "disponível" */
 .status-indicator {
     position: absolute;
     bottom: 8px;
@@ -175,7 +190,8 @@ body {
     }
 }
 
-/* Typography */
+/* [CSS: ESTILIZAÇÃO DOS TEXTOS]
+   Define cores, tamanhos, negritos e sombras dos textos. */
 .profile-name {
     font-size: 1.8rem;
     font-weight: 800;
@@ -194,7 +210,6 @@ body {
     letter-spacing: 1.5px;
 }
 
-/* Profile Body */
 .profile-body {
     margin-bottom: 32px;
 }
@@ -206,7 +221,7 @@ body {
     font-weight: 300;
 }
 
-/* Actions & Button */
+/* [CSS: BOTÕES E AÇÕES INTERATIVAS] */
 .profile-actions {
     display: flex;
     justify-content: center;
@@ -233,6 +248,7 @@ body {
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* [CSS: INTERAÇÕES DE CLIQUE E HOVER DO BOTÃO] */
 .btn-primary:hover {
     background: var(--primary-hover-gradient);
     transform: translateY(-2px);
@@ -253,6 +269,7 @@ body {
     animation: waveEmoji 0.5s ease-in-out infinite alternate;
 }
 
+/* [CSS: EFEITO DE ACENAR DO EMOJI 👋] */
 @keyframes waveEmoji {
     0% {
         transform: rotate(0deg);
@@ -262,11 +279,13 @@ body {
     }
 }
 
-/* Responsive adjustments */
+/* [CSS: REGRAS RESPONSIVAS PARA DISPOSITIVOS MÓVEIS (MOBILE)]
+   Essas regras são ativadas apenas em telas menores de 480px.
+   Aqui também desativamos o scroll vertical no mobile. */
 @media (max-width: 480px) {
     html, body {
         height: 100dvh;
-        overflow: hidden;
+        overflow: hidden; /* Remove o scroll do mouse/toque no mobile */
     }
 
     body {

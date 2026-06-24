@@ -1,50 +1,76 @@
+<!-- [ESTRUTURA HTML: Este arquivo define toda a estrutura, elementos e textos da página] -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- [TEXTO: Descrição da página usada por mecanismos de busca (SEO)] -->
     <meta name="description" content="Página pessoal de Luiz André Nunes Caparica - Desenvolvedor de Software Junior. Portfólio, biografia e informações profissionais.">
+    
+    <!-- [TEXTO: O título que aparece na aba do navegador] -->
     <title>Luiz André Nunes Caparica | Desenvolvedor Junior</title>
     
-    <!-- Google Fonts: Outfit -->
+    <!-- [FONTE EXTERNA: Importa a fonte Outfit do Google Fonts para o design] -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <!-- [VÍNCULO COM O CSS: Conecta as regras de estilo e design deste arquivo ao style.css] -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- [ESTRUTURA HTML: Elementos decorativos de fundo que serão estilizados via CSS] -->
     <div class="bg-gradient-decoration"></div>
     <div class="bg-glow-ball"></div>
     
+    <!-- [ESTRUTURA HTML: Conteúdo principal centralizado] -->
     <main class="main-container">
+        
+        <!-- [ESTRUTURA HTML: Seção do cartão de perfil] -->
         <section class="profile-card" id="profile-section">
+            
+            <!-- [ESTRUTURA HTML: Cabeçalho do cartão (Foto e Nome)] -->
             <header class="profile-header">
+                
+                <!-- [ESTRUTURA HTML: Container para a foto de perfil] -->
                 <div class="avatar-container">
+                    <!-- [IMAGEM: Arquivo de imagem local (sua foto de perfil)] -->
                     <img src="profile.jpg" alt="Foto de perfil profissional de Luiz André Nunes Caparica" class="profile-avatar" id="profile-img">
+                    
+                    <!-- [ESTRUTURA HTML: Ponto verde de status online] -->
                     <div class="status-indicator" title="Disponível para projetos"></div>
                 </div>
+                
+                <!-- [TEXTO: Seu Nome (Título principal do cartão)] -->
                 <h1 class="profile-name" id="main-title">Luiz André Nunes Caparica</h1>
+                
+                <!-- [TEXTO: Subtítulo profissional] -->
                 <p class="profile-title">Desenvolvedor Junior</p>
             </header>
             
+            <!-- [ESTRUTURA HTML: Corpo do cartão de perfil] -->
             <article class="profile-body">
+                <!-- [TEXTO: Biografia Profissional / Resumo sobre você] -->
                 <p class="profile-bio">
                     Desenvolvedor Junior em transição para o modelo de trabalho 'AI-first'. Minha jornada é guiada para dominar a lógica do desenvolvimento web, utilizando IA para acelerar a construção enquanto mantenho o controle e a compreensão sobre cada linha de código. Busco criar experiências digitais que sejam, acima de tudo, minimalistas, eficientes e de alto impacto.
                 </p>
             </article>
             
+            <!-- [ESTRUTURA HTML: Rodapé do cartão contendo ações interativas] -->
             <footer class="profile-actions">
+                <!-- [ESTRUTURA HTML: Botão de ação] -->
                 <button id="greet-btn" class="btn btn-primary" aria-label="Enviar uma saudação">
+                    <!-- [TEXTO: Texto visível no botão] -->
                     Diga Olá
+                    <!-- [ESTRUTURA HTML: Emoji animado] -->
                     <span class="btn-icon">👋</span>
                 </button>
             </footer>
         </section>
     </main>
 
-    <!-- Custom JS -->
+    <!-- [VÍNCULO COM O JAVASCRIPT: Arquivo que controla a lógica interativa (alerta no clique)] -->
     <script src="script.js"></script>
 </body>
 </html>
