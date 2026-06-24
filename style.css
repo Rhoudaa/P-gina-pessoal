@@ -241,6 +241,8 @@ body {
     line-height: 1.6;
     color: var(--text-secondary);
     font-weight: 300;
+    text-align: justify; /* Justifica o alinhamento das linhas de texto */
+    text-indent: 2em; /* Adiciona o recuo de parágrafo inicial */
 }
 
 /* [CSS: BOTÕES E AÇÕES INTERATIVAS] */
