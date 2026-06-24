@@ -20,6 +20,23 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave para transição de estados (hover) */
 }
 
+/* [CSS: VARIÁVEIS DO TEMA CLARO]
+   Quando a classe 'light-theme' for adicionada ao body, estas variáveis substituem as padrão. */
+body.light-theme {
+    --bg-primary: #f0f2f5; /* Cor de fundo principal clara */
+    --card-bg: rgba(255, 255, 255, 0.65); /* Fundo translúcido branco */
+    --card-border: rgba(255, 255, 255, 0.4); /* Borda brilhante suave */
+    --card-glow: rgba(99, 102, 241, 0.05); /* Brilho sutil roxo */
+    
+    --text-primary: #0f172a; /* Cor do texto principal escuro */
+    --text-secondary: #334155; /* Cor do texto secundário cinza escuro */
+    --text-muted: #64748b; /* Cor de textos de ajuda/apoio */
+    
+    --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); /* Gradiente mais vivo no tema claro */
+    --primary-hover-gradient: linear-gradient(135deg, #3730a3 0%, #6d28d9 100%);
+    --glow-color: rgba(99, 102, 241, 0.25);
+}
+
 /* [CSS: RESET GLOBAL]
    Remove margens e paddings padrões que os navegadores colocam sozinhos. */
 * {
@@ -93,6 +110,7 @@ body {
 /* [CSS: CARTÃO DE PERFIL (Glassmorphism)]
    Aparência de vidro fosco, com transparência e bordas suaves. */
 .profile-card {
+    position: relative; /* Necessário para posicionar o botão de tema de forma absoluta */
     background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -277,6 +295,55 @@ body {
     100% {
         transform: rotate(15deg);
     }
+}
+
+/* [CSS: ADAPTAÇÕES DE FUNDO DO TEMA CLARO] */
+body.light-theme .bg-gradient-decoration {
+    background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 45%);
+}
+
+body.light-theme .bg-glow-ball {
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+}
+
+/* [CSS: BOTÃO DE ALTERNAR TEMA] */
+.theme-toggle-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 15px var(--card-glow);
+}
+
+body.light-theme .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-primary);
+    border-color: var(--card-border);
+}
+
+body.light-theme .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
 }
 
 /* [CSS: REGRAS RESPONSIVAS PARA DISPOSITIVOS MÓVEIS (MOBILE)]
